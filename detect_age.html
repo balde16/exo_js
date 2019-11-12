@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+  </head>
+  <body>
+
+    <p>Click the button to know if you are qualify.</p>
+
+     <!--boutton html declanchant la fonction detectMyAgeByNight--> 
+     <button id="btn" click="createMyButton()">Click to know</button>
+
+    <script>
+
+     //declanchement de la foncion au click   
+     document.getElementById('btn').addEventListener('click',detectMyAgeByNight);
+
+      function detectMyAgeByNight()
+      {
+
+         var a = prompt("quel age avez-vous?");
+            
+          if(isNaN (a) && a < 18 )
+              {
+                alert("Ce n'est pas un age ou vous etes mineur");
+
+                a = prompt("Veuillez entrer un âge");
+              }
+            
+            else if(a==0)
+              {
+                alert("T'as pas saisie un age");
+                
+                a = prompt("Veuillez entrer un âge");
+              }
+
+            else if(a>=18)
+              {
+                  alert ("Vous pouvez entrer");
+              }
+
+            else
+              {
+                  alert ("Vous ne pouvez pas entrer");
+              }
+         }
+         
+         //Appel de la function
+         detectMyAgeByNight();
+
+        //Fonction permettant de creer le boutton html
+        function createMyButton() {
+          var btn = document.createElement("BUTTON");
+        }
+
+    </script>
+
+  </body>
+</html>
