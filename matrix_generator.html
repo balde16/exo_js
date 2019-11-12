@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+	
+	<style>
+     table{
+         width: 400px;
+         border: 1px solid black;
+     }
+     td{
+        width: 30px;
+         height: 30px; 
+     }
+	 </style> 
+  </head>
+
+  <body>
+     
+
+   <script>
+        var table=document.createElement('table');
+		  for(var i=0; i<10;i++){
+		  var tr=document.createElement('tr');
+		  for(var j=0; j<10;j++){
+			tr.appendChild(document.createElement('td'));
+		  }
+		  table.appendChild(tr);
+		}
+
+        function creer_matrice() {
+		
+			var choix=prompt("donnez la taille de votre matrice:");
+			var matrice= new Array();
+			matrice.length=parseInt(choix);
+			
+        alert("votre matrice est d'ordre :" +matrice.length + " x" +matrice.length);
+        
+        for (var i=0; i<matrice.length; i++) {
+        
+			for (var j=0; j<matrice.length; j++) {
+			
+				if (!matrice[i]) matrice[i] = new Array(); 
+				var case_courante = prompt('Valeur de la case :' + i + '|' + j);
+				matrice[i][j] = case_courante;
+			}
+        } 
+        
+        return matrice;
+        
+        }
+        
+        var ma_matrice = creer_matrice();
+        alert(ma_matrice);
+
+</script>
+
+</body>
+</html>
